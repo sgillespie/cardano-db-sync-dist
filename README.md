@@ -1,2 +1,3 @@
-# cardano-db-sync-dist
-systemd blueprints for packaging cardano-db-sync and dependencies
+# Cardano DB Sync Packaging Blueprints _(cardano-db-sync-dist)_
+
+> systemd templates for packaging and deploying cardano-db-sync
