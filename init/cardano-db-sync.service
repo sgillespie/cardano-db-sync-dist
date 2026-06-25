@@ -1,0 +1,27 @@
+# cardano-db-sync.service
+#
+# See https://github.com/IntersectMBO/cardano-db-sync/blob/master/doc/installing.md for
+# instructions
+[Unit]
+Description=Cardano DB Sync
+Documentation=https://github.com/IntersectMBO/cardano-db-sync/tree/master/doc
+After=network-online.target postgresql.service cardano-node.service
+Wants=network-online.target
+Requires=postgresql.service cardano-node.service
+
+[Service]
+User=cardano-node
+Group=cardano-node
+StateDirectory=cardano-db-sync
+ConfigurationDirectory=cardano-db-sync
+WorkingDirectory=/var/lib/cardano-db-sync
+Environment=PGPASSFILE=/etc/cardano-db-sync/pgpass
+ExecStart=cardano-db-sync \
+    --config /etc/cardano/db-sync-config.json \
+    --state-dir /var/lib/cardano-db-sync \
+    --socket-path /run/cardano/node.socket \
+    --schema-dir /usr/share/cardano-db-sync/schema
+TimeoutStopSec=2h
+
+[Install]
+WantedBy=multi-user.target
