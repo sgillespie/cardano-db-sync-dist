@@ -1,1 +1,1 @@
-u cardano-node - "Cardano node" /var/lib/cardano /usr/sbin/nologin
+u cardano-node - "Cardano node" /var/lib/cardano /usr/bin/nologin
