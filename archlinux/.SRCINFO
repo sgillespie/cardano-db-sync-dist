@@ -1,0 +1,20 @@
+pkgbase = cardano-node-bin
+	pkgdesc = The core component that is used to participate in a Cardano decentralised blockchain.
+	pkgver = 11.0.1
+	pkgrel = 1
+	url = https://github.com/input-output-hk/cardano-node
+	arch = x86_64
+	license = GPL
+	provides = cardano-node-11.0.1
+	conflicts = cardano-node
+	conflicts = cardano-node-git
+	source = cardano-node.service
+	source = cardano-node.sysusers
+	source = cardano-node.tmpfiles
+	source = https://github.com/IntersectMBO/cardano-node/releases/download/11.0.1/cardano-node-11.0.1-linux-amd64.tar.gz
+	sha256sums = 9e608551e4a5cf64187efc2fc0f37b210113bcd455a63ca2fbda2a5675ae8595
+	sha256sums = cc392d369ecc687e24dc7c9c7b7a6ab2cc87715e581b11a137735abaae1cdf1f
+	sha256sums = e92b761129b91f6b359be2d0e640dee0f0a5cf0beeddb503ad575ddc998f4f95
+	sha256sums = 40e88a543564251338c4888ef79fde51d2306c18b48ac308c9eab3220e3a13f0
+
+pkgname = cardano-node-bin
