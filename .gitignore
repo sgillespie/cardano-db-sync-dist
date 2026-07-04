@@ -1,14 +1,18 @@
 # Working directory for install.sh
 tmp/
 
-# Arch Linux package
-archlinux/cardano-node.service
-archlinux/cardano-node.sysusers
-archlinux/cardano-node.tmpfiles
-archlinux/*.log
-archlinux/*.pkg.tar.zst
-archlinux/pkg/
-archlinux/src/
+# Arch Linux packages
+archlinux/cardano-node-bin/cardano-node.service
+archlinux/cardano-node-bin/cardano-node.sysusers
+archlinux/cardano-node-bin/cardano-node.tmpfiles
+archlinux/cardano-db-sync-bin/cardano-db-sync.service
+archlinux/cardano-db-sync-bin/cardano-db-sync.tmpfiles
+archlinux/cardano-db-sync-bin/db-sync-config-*.json
+archlinux/**/*.log
+archlinux/**/*.pkg.tar.zst
+archlinux/**/pkg/
+archlinux/**/src/
 
 # Release tarballs
 cardano-node-*.tar.gz
+cardano-db-sync-*.tar.gz

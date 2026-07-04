@@ -1,0 +1,59 @@
+# Maintainer: Sean Gillespie <sean@mistersg.net>
+pkgname=cardano-db-sync-bin
+pkgver=13.7.2.1
+pkgrel=1
+pkgdesc="A Cardano chain indexer that stores block and transactions in a PostgreSQL database"
+arch=("x86_64")
+url="https://github.com/IntersectMBO/cardano-db-sync"
+license=('Apache-2.0')
+depends=("cardano-node-bin")
+provides=("cardano-db-sync")
+conflicts=("cardano-db-sync")
+options=(!debug !strip)
+source=(
+  "cardano-db-sync.service"
+  "cardano-db-sync.tmpfiles"
+  "db-sync-config-mainnet.json::https://book.world.dev.cardano.org/environments/mainnet/db-sync-config.json"
+  "db-sync-config-preprod.json::https://book.world.dev.cardano.org/environments/preprod/db-sync-config.json"
+  "db-sync-config-preview.json::https://book.world.dev.cardano.org/environments/preview/db-sync-config.json"
+  "https://github.com/IntersectMBO/cardano-db-sync/releases/download/$pkgver/cardano-db-sync-$pkgver-linux.tar.gz"
+)
+sha256sums=('08ef069ad9fb8204788949c094e59ee80510a308659d1ade7e6274498ceb9da3'
+            '6b83bea7f4b01fcd0606d6b5846650955784c449a6848c498762e1c8d9b7c348'
+            '9094bdb9a755c23be8ecb71b80362e80fb3415d7a6ffe9d25646848078a65f63'
+            'b83f6e966d4b4ac4a987c1f6e939869c64c82f2583b2a8d1cb809c7fdfcd3048'
+            '31571c14cf78a4266d673a7e002f1b8395589f7cd1ce0a6226da3f417251b1e1'
+            'e1d94e868e7abcf26d506d921787add698e65ca7d90491d8d4fd7f1af6770bf1')
+
+check() {
+  "${srcdir}/bin/cardano-db-sync" version | grep -s "$pkgver"
+}
+
+package() {
+  # Create required directories
+  install -d "${pkgdir}/usr/bin"
+  install -d "${pkgdir}/usr/share/cardano-db-sync/schema"
+
+  # Install systemd files
+  install -D -m0644 \
+    "${srcdir}/cardano-db-sync.service" \
+    "${pkgdir}/usr/lib/systemd/system/cardano-db-sync.service"
+  install -D -m0644 \
+    "${srcdir}/cardano-db-sync.tmpfiles" \
+    "${pkgdir}/usr/lib/tmpfiles.d/cardano-db-sync.conf"
+
+  # Copy configs
+  install -D -m0644 "${srcdir}/schema/"* "${pkgdir}/usr/share/cardano-db-sync/schema/"
+  install -D -m0644 \
+    "${srcdir}/db-sync-config-mainnet.json" \
+    "${pkgdir}/etc/cardano/mainnet/db-sync-config.json"
+  install -D -m0644 \
+    "${srcdir}/db-sync-config-preprod.json" \
+    "${pkgdir}/etc/cardano/preprod/db-sync-config.json"
+  install -D -m0644 \
+    "${srcdir}/db-sync-config-preview.json" \
+    "${pkgdir}/etc/cardano/preview/db-sync-config.json"
+
+  # Binaries
+  install -D -m0755 "${srcdir}/bin/cardano-db-sync" "${pkgdir}/usr/bin/cardano-db-sync"
+}

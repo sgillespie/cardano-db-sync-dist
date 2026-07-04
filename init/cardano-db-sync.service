@@ -13,12 +13,12 @@ Requires=postgresql.service cardano-node.service
 User=cardano-node
 Group=cardano-node
 StateDirectory=cardano-db-sync
-ConfigurationDirectory=cardano-db-sync
-WorkingDirectory=/var/lib/cardano-db-sync
-Environment=PGPASSFILE=/etc/cardano-db-sync/pgpass
+ConfigurationDirectory=cardano/mainnet
+WorkingDirectory=%S/cardano-db-sync
+Environment=PGPASSFILE=/etc/cardano/mainnet/pgpass
 ExecStart=cardano-db-sync \
-    --config /etc/cardano/db-sync-config.json \
-    --state-dir /var/lib/cardano-db-sync \
+    --config "${CONFIGURATION_DIRECTORY}/db-sync-config.json" \
+    --state-dir "${STATE_DIRECTORY}/cardano-db-sync" \
     --socket-path /run/cardano/node.socket \
     --schema-dir /usr/share/cardano-db-sync/schema
 TimeoutStopSec=2h

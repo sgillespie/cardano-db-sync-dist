@@ -1,1 +1,3 @@
-d /usr/share/cardano-db-sync/schema 0755 root root -
+f /etc/cardano/mainnet/pgpass 0644 cardano-node cardano-node - /run/postgresql:5432:cardano-db-sync-mainnet:cardano-node:*
+f /etc/cardano/preprod/pgpass 0644 cardano-node cardano-node - /run/postgresql:5432:cardano-db-sync-preprod:cardano-node:*
+f /etc/cardano/preview/pgpass 0644 cardano-node cardano-node - /run/postgresql:5432:cardano-db-sync-preview:cardano-node:*
