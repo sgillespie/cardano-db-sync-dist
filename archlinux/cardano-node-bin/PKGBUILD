@@ -6,22 +6,16 @@ pkgdesc="The core component that is used to participate in a Cardano decentralis
 arch=("x86_64")
 url="https://github.com/input-output-hk/cardano-node"
 license=('Apache-2.0')
+depends=('cardano-conf')
 provides=("cardano-node")
 conflicts=("cardano-node" "cardano-node-git")
-backup=(
-  etc/cardano/mainnet/{byron-genesis,shelley-genesis,alonzo-genesis,conway-genesis}.json
-  etc/cardano/mainnet/{config,config-legacy,peer-snapshot,topology,tracer-config}.json
-  etc/cardano/mainnet/submit-api-config.json
-  etc/cardano/mainnet/checkpoints.json
-  etc/cardano/preprod/{byron-genesis,shelley-genesis,alonzo-genesis,conway-genesis}.json
-  etc/cardano/preprod/{config,config-legacy,peer-snapshot,topology,tracer-config}.json
-  etc/cardano/preprod/submit-api-config.json
-  etc/cardano/preview/{byron-genesis,shelley-genesis,alonzo-genesis,conway-genesis}.json
-  etc/cardano/preview/{config,config-legacy,peer-snapshot,topology,tracer-config}.json
-  etc/cardano/preview/submit-api-config.json
-  etc/cardano/preview/checkpoints.json
-)
+backup=()
 options=(!debug !strip)
+
+# Configuration files from cardano-playground repository (pinned commit)
+# Commit: e18bf6327fa9956c907739d049e9b3ec0c6a7dd6
+_config_commit=e18bf6327fa9956c907739d049e9b3ec0c6a7dd6
+
 source=(
   "cardano-node.service"
   "cardano-node.sysusers"
@@ -46,8 +40,4 @@ package() {
 
   # static binaries
   install -D -m0755 "${srcdir}/bin/"{cardano-cli,cardano-node} "${pkgdir}/usr/bin"
-  # network configs
-  install -D -m0644 "${srcdir}/share/mainnet/"* "${pkgdir}/etc/cardano/mainnet"
-  install -D -m0644 "${srcdir}/share/preprod/"* "${pkgdir}/etc/cardano/preprod"
-  install -D -m0644 "${srcdir}/share/preview/"* "${pkgdir}/etc/cardano/preview"
 }
