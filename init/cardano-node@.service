@@ -20,10 +20,11 @@ ExecStart=/usr/bin/cardano-node run \
   --port          3001
 Restart=always
 RestartSec=5
-ConfigurationDirectory=cardano/mainnet
-RuntimeDirectory=cardano
-StateDirectory=cardano
-WorkingDirectory=%S/cardano
+ConfigurationDirectory=cardano/%i
+RuntimeDirectory=cardano/%i
+StateDirectory=cardano/%i
+WorkingDirectory=%S/cardano/%i
 
 [Install]
 WantedBy=multi-user.target
+

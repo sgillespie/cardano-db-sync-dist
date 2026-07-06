@@ -11,10 +11,10 @@ pkgbase = cardano-db-sync-bin
 	conflicts = cardano-db-sync
 	options = !debug
 	options = !strip
-	source = cardano-db-sync.service
+	source = cardano-db-sync@.service
 	source = cardano-db-sync.tmpfiles
 	source = https://github.com/IntersectMBO/cardano-db-sync/releases/download/13.7.2.1/cardano-db-sync-13.7.2.1-linux.tar.gz
-	sha256sums = 08ef069ad9fb8204788949c094e59ee80510a308659d1ade7e6274498ceb9da3
+	sha256sums = fde385c0042261501a54e3d422e837c0568140bfc501fa0c01ff34aa87d8646d
 	sha256sums = 6b83bea7f4b01fcd0606d6b5846650955784c449a6848c498762e1c8d9b7c348
 	sha256sums = e1d94e868e7abcf26d506d921787add698e65ca7d90491d8d4fd7f1af6770bf1
 
