@@ -20,9 +20,9 @@ Up-to-date environment configurations can be found in the
 
 This repository contains multiple ways to install cardano-db-sync:
 
- * [Arch Linux](#arch-linux): `pacman` packages
+ * [Arch Linux](#arch-linux): pacman packages
  * [Installation Script](#installation-script): a script that automates the manual steps
- * [Manual Steps](#manual): install the static binaries and systemd units by hand
+ * [Manual Steps](#manual-steps): install the static binaries and systemd units by hand
 
 ### Arch Linux
 
