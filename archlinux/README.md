@@ -13,9 +13,11 @@ Because they depend on each other, they must be built in order, eg `cardano-conf
 
 ## Prerequisites
 
- * [`base-devel`](https://archlinux.org/packages/core/any/base-devel/)
- * [`devtools`](https://archlinux.org/packages/extra/x86_64/devtools/)
- * [`pacman-contrib`](https://archlinux.org/packages/extra/x86_64/pacman-contrib/)
+The following Arch Linux packages are required:
+
+ * [base-devel](https://archlinux.org/packages/core/any/base-devel/)
+ * [devtools](https://archlinux.org/packages/extra/x86_64/devtools/)
+ * [pacman-contrib](https://archlinux.org/packages/extra/x86_64/pacman-contrib/)
 
 ```
 sudo pacman -S --needed base-devel devtools pacman-contrib git
