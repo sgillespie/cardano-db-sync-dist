@@ -26,7 +26,7 @@ This repository contains multiple ways to install cardano-db-sync:
 
 ### Arch Linux
 
-See [archlinux/README.md]
+See [archlinux/README.md](archlinux/README.md)
 
 ### Installation Script
 
