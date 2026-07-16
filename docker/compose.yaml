@@ -1,0 +1,49 @@
+# Launches cardano-node, cardano-db-sync and postgresql on the preview network
+name: cardano-db-sync
+
+services:
+  node:
+    image: ghcr.io/sgillespie/cardano-node:${NODE_VERSION:-11.0.1}
+    restart: on-failure
+    environment:
+      NETWORK: ${NETWORK:-preview}
+    volumes:
+      - node-db:/var/lib/cardano
+      - run-cardano:/run/cardano
+
+  db-sync:
+    image: ghcr.io/sgillespie/cardano-db-sync:${DBSYNC_VERSION:-13.7.2.1}
+    restart: on-failure
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      NETWORK: ${NETWORK:-preview}
+      PGHOST: postgres
+      PGPORT: 5432
+      PGUSER: cardano
+      PGPASSWORD: cardano
+    volumes:
+      - dbsync-state:/var/lib/cardano-db-sync
+      - run-cardano:/run/cardano
+
+  postgres:
+    image: docker.io/library/postgres:16
+    restart: on-failure
+    environment:
+      POSTGRES_USER: cardano
+      POSTGRES_PASSWORD: cardano
+      POSTGRES_DB: cardano-db-sync-${NETWORK:-preview}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cardano -d cardano-db-sync-${NETWORK:-preview}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  node-db: {}
+  dbsync-state: {}
+  run-cardano: {}
+  postgres-data: {}
