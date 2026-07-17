@@ -7,7 +7,6 @@ CONF_IMAGE := $(REGISTRY)/cardano-conf:$(NODE_VERSION)
 .DEFAULT_GOAL := build
 
 .PHONY: build conf node db-sync push clean
-
 build: node db-sync
 
 conf:
