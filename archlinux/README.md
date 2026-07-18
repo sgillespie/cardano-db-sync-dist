@@ -2,43 +2,47 @@
 
 > Arch Linux packages for deploying cardano-db-sync and its dependencies
 
-This directory contains the following Arch Linux packages:
+These packages are now on [AUR](https://aur.archlinux.org). They consist of:
 
- * `cardano-conf`: network configuration files for `mainnet`, `preprod`, and `preview`
- * `cardano-node-bin`: cardano-node with static binaries
- * `cardano-db-sync-bin`: cardano-db-sync with static binaries
+ * [cardano-conf](https://aur.archlinux.org/packages/cardano-conf): network configuration 
+   files for `mainnet`, `preprod`, and `preview`
+ * [cardano-node-bin](https://aur.archlinux.org/packages/cardano-node-bin): cardano-node 
+   with static binaries
+ * [cardano-db-sync-bin](https://aur.archlinux.org/packages/cardano-db-sync-bin): 
+   cardano-db-sync with static binaries
 
 Because they depend on each other, they must be built in order, eg `cardano-conf` -> 
 `cardano-node-bin` -> `cardano-db-sync-bin`
 
 ## Prerequisites
 
-The following Arch Linux packages are required:
+For installation with an [AUR helper](https://wiki.archlinux.org/title/AUR_helpers), only
+the helper is required. [Yay](https://github.com/Jguer/yay) and 
+[Paru](https://github.com/morganamilo/paru) are popular choices.
+
+To manually build, the following Arch Linux packages are required:
 
  * [base-devel](https://archlinux.org/packages/core/any/base-devel/)
- * [devtools](https://archlinux.org/packages/extra/x86_64/devtools/)
- * [pacman-contrib](https://archlinux.org/packages/extra/x86_64/pacman-contrib/)
-
-```
-sudo pacman -S --needed base-devel devtools pacman-contrib git
-```
+ * [git](https://archlinux.org/packages/extra/x86_64/git/)
 
 ## Quick Start
 
-Build the packages:
+To install `cardano-node-bin` and `cardano-db-sync-bin`:
 
 ```
-cd archlinux
-make
+# With paru:
+paru -S cardano-node-bin cardano-db-sync-bin 
+
+# Or, with yay
+yay -S cardano-node-bin cardano-db-sync-bin
 ```
 
-Install them:
+Install [postgresql](https://wiki.archlinux.org/title/PostgreSQL) and create the database:
 
 ```
-sudo pacman -U \
-    cardano-conf/cardano-conf.pkg.tar.zst \
-    cardano-node-bin/cardano-node-bin.pkg.tar.zst \
-    cardano-db-sync-bin/cardano-db-sync-bin.pkg.tar.zst
+sudo -u postgres createuser cardano-node --no-superuser --createdb
+# eg cardano-db-sync-mainnet
+sudo -u cardano-node createdb cardano-db-sync-NETWORK
 ```
 
 Enable and start the services for the desired network:
@@ -47,14 +51,32 @@ Enable and start the services for the desired network:
 # eg cardano-node@mainnet.service
 sudo systemctl enable --now cardano-node@NETWORK.service
 # eg cardano-db-sync@mainnet.service
-sudo systemctl enable --now cardano-db-sync@mainnet.service
+sudo systemctl enable --now cardano-db-sync@NETWORK.service
 ```
 
-## Updating Package Checksums
+**Note:** The cardano-db-sync network must match the cardano-node network!
 
-After updating files in `init/` or a `PKGBUILD`, the `sha256sums` can be updated by
-running:
+## Building Manually
+
+To build without an AUR helper, first clone the packages from AUR:
 
 ```
-make pkgsums
+git clone https://aur.archlinux.org/cardano-conf.git
+git clone https://aur.archlinux.org/cardano-node-bin.git
+git clone https://aur.archlinux.org/cardano-db-sync-bin.git
 ```
+
+Carefully inspect each `PKGBUILD` along with the `.install` files, then build and install 
+them in order:
+
+```
+cd cardano-conf
+makepkg --syncdeps --install
+
+cd ../cardano-node-bin
+makepkg --syncdeps --install
+
+cd ../cardano-db-sync-bin
+makepkg --syncdeps --install
+```
+

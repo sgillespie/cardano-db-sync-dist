@@ -21,12 +21,28 @@ Up-to-date environment configurations can be found in the
 This repository contains multiple ways to install cardano-db-sync:
 
  * [Arch Linux](#arch-linux): pacman packages
+ * [Docker](#docker): Docker images
  * [Installation Script](#installation-script): a script that automates the manual steps
  * [Manual Steps](#manual-steps): install the static binaries and systemd units by hand
 
 ### Arch Linux
 
-See [archlinux/README.md](archlinux/README.md)
+These packages are on [AUR](https://aur.archlinux.org). Install with an 
+[AUR helper](https://wiki.archlinux.org/title/AUR_helpers):
+
+```
+# With paru:
+paru -S cardano-node-bin cardano-db-sync-bin 
+
+# Or, with yay
+yay -S cardano-node-bin cardano-db-sync-bin
+```
+
+For detailed instructions, see [archlinux/README.md](archlinux/README.md)
+
+### Docker
+
+See [docker/README.md](docker/README.md)
 
 ### Installation Script
 
