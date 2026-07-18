@@ -4,3 +4,6 @@ tmp/
 # Release tarballs
 cardano-node-*.tar.gz
 cardano-db-sync-*.tar.gz
+
+# Docker
+docker/config/
