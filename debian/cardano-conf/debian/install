@@ -1,1 +1,3 @@
-etc/cardano /etc
+etc/cardano/mainnet /etc/cardano/mainnet
+etc/cardano/preview /etc/cardano/preview
+etc/cardano/preprod /etc/cardano/preprod
