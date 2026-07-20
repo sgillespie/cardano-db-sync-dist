@@ -1,0 +1,14 @@
+Source: cardano-conf
+Section: net
+Priority: optional
+Maintainer: Sean Gillespie <sean@mistersg.net>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.4.1
+Homepage: https://book.play.dev.cardano.org/
+Rules-Requires-Root: no
+
+Package: cardano-conf
+Architecture: all
+Depends: ${misc:Depends}
+Description: Configuration files for Cardano core components
+ Configuration files for mainnet, preprod and preview Cardano networks.

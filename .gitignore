@@ -5,5 +5,21 @@ tmp/
 cardano-node-*.tar.gz
 cardano-db-sync-*.tar.gz
 
+# Debian
+debian/*.dsc
+debian/*.tar.xz
+debian/*.deb
+debian/*.buildinfo
+debian/*.changes
+
+debian/cardano-conf/debian/.debhelper
+debian/cardano-conf/debian/*.substvars
+debian/cardano-conf/debian/*/DEBIAN
+debian/cardano-conf/debian/cardano-conf/
+debian/cardano-conf/debian/debhelper-build-stamp
+debian/cardano-conf/debian/files
+debian/cardano-conf/cardano-playground-*.tar.gz
+debian/cardano-conf/etc/
+
 # Docker
 docker/config/
