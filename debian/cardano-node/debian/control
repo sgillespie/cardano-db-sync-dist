@@ -10,3 +10,5 @@ Package: cardano-node
 Architecture: amd64
 Depends: ${misc:Depends}
 Description: Core component used to participate in a Cardano blockschain
+ This package provides a Systemd template service with instances for each 
+ network. See README.Debian for setup instructions.

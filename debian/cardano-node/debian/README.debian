@@ -1,0 +1,14 @@
+cardano-node
+------------
+
+Systemd services are installed as a template, and instances are named by the network.
+
+For example, to run mainnet:
+
+    systemctl enable --now cardano-node@mainnet.service
+
+To run a testnet, use the corresponding network instance:
+
+    systemctl enable --now cardano-node@preview.service
+
+Supported networks are 'mainnet', 'preview' and 'preprod'
