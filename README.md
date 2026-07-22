@@ -40,6 +40,10 @@ yay -S cardano-node-bin cardano-db-sync-bin
 
 For detailed instructions, see [archlinux/README.md](archlinux/README.md)
 
+### Debian/Ubuntu
+
+See [debian/README.md](debian/README.md)
+
 ### Docker
 
 See [docker/README.md](docker/README.md)
