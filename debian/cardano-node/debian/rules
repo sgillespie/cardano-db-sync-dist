@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ \
+		--without autoreconf \
+		--with installsysusers
+
+# Override default clean and build targets. Otherwise, it would detect the top-level 
+# Makefile and run its clean and build, which would again call this and recurse indefinitely
+override_dh_auto_build:
+override_dh_auto_clean:
+
+# Override executable binary processing steps. The binaries shipped here are static and
+# already optimized
+override_dh_strip:
+override_dh_dwz:
+override_dh_shlibdeps:
+

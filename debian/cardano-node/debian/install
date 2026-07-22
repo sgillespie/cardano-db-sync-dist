@@ -1,0 +1,2 @@
+bin/cardano-node usr/bin
+bin/cardano-cli usr/bin

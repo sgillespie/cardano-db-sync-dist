@@ -1,0 +1,7 @@
+cardano-node (11.0.1-1) experimental; urgency=medium
+
+  * Initial release.
+  * The core component used to participate in a Cardano blockchain (binary
+    package).
+
+ -- Sean Gillespie <sean@mistersg.net>  Mon, 20 Jul 2026 16:52:00 -0400

@@ -4,22 +4,31 @@ tmp/
 # Release tarballs
 cardano-node-*.tar.gz
 cardano-db-sync-*.tar.gz
+cardano-playground-*.tar.gz
 
-# Debian
+## Debian packaging
+# Packages/artifacts
 debian/*.dsc
 debian/*.tar.xz
 debian/*.deb
 debian/*.buildinfo
 debian/*.changes
-
-debian/cardano-conf/debian/.debhelper
-debian/cardano-conf/debian/*.substvars
-debian/cardano-conf/debian/*/DEBIAN
+# Debhelper
+debian/*/debian/*.debhelper
+debian/*/debian/*.substvars
+debian/*/debian/*/DEBIAN
+debian/*/debian/debhelper-build-stamp
+debian/*/debian/files
+# cardano-conf
 debian/cardano-conf/debian/cardano-conf/
-debian/cardano-conf/debian/debhelper-build-stamp
-debian/cardano-conf/debian/files
-debian/cardano-conf/cardano-playground-*.tar.gz
 debian/cardano-conf/etc/
+# cardano-node
+debian/cardano-node/.extract-stamp
+debian/cardano-node/bin/
+debian/cardano-node/debian/cardano-node/
+debian/cardano-node/share/
+debian/cardano-node/debian/cardano-node.sysusers
+debian/cardano-node/debian/cardano-node@.service
 
 # Docker
 docker/config/

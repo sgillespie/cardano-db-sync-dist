@@ -1,0 +1,12 @@
+Source: cardano-node
+Section: net
+Maintainer: Sean Gillespie <sean@mistersg.net>
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.7.4.1
+Homepage: https://github.com/input-output-hk/cardano-node
+
+Package: cardano-node
+Architecture: amd64
+Depends: ${misc:Depends}
+Description: Core component used to participate in a Cardano blockschain
