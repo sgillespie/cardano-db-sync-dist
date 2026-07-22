@@ -1,0 +1,7 @@
+cardano-db-sync (13.7.2.1) experimental; urgency=medium
+
+  * Initial release.
+  * A Cardano chain indexer that stores block and transactions in a PostgreSQL 
+    database (binary package).
+
+ -- Sean Gillespie <sean@mistersg.net>  Wed, 22 Jul 2026 15:16:36 -0400

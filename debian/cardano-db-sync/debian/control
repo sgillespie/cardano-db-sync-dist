@@ -1,0 +1,21 @@
+Source: cardano-db-sync
+Section: net
+Maintainer: Sean Gillespie <sean@mistersg.net>
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.7.4.1
+Homepage: https://github.com/IntersectMBO/cardano-db-sync
+
+Package: cardano-db-sync
+Architecture: amd64
+Depends:
+ ${misc:Depends},
+ cardano-conf,
+ cardano-node,
+ postgresql,
+Description: A Cardano indexer that stores data in a PostgreSQL database
+ A Cardano chain indexer that stores block and transactions in a PostgreSQL 
+ database.
+ .
+ This package provides a Systemd template service with instances for each 
+ network. See README.Debian for setup instructions.

@@ -29,6 +29,13 @@ debian/cardano-node/debian/cardano-node/
 debian/cardano-node/share/
 debian/cardano-node/debian/cardano-node.sysusers
 debian/cardano-node/debian/cardano-node@.service
+# cardano-db-sync
+debian/cardano-db-sync/.extract-stamp
+debian/cardano-db-sync/bin/
+debian/cardano-db-sync/debian/cardano-db-sync/
+debian/cardano-db-sync/schema/
+debian/cardano-db-sync/debian/cardano-db-sync@.service
+debian/cardano-db-sync/debian/cardano-db-sync.tmpfiles
 
 # Docker
 docker/config/

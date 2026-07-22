@@ -1,0 +1,4 @@
+bin/cardano-db-sync usr/bin
+bin/cardano-db-tool usr/bin
+bin/cardano-smash-server usr/bin
+schema usr/share/cardano-db-sync

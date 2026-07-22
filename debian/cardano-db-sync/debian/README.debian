@@ -1,0 +1,25 @@
+cardano-db-sync
+---------------
+
+Before starting cardano-db-sync, the PostgreSQL database must be created first. For 
+example, to create a mainnet database in mainnet:
+
+    sudo -u postgres createuser cardano-node --no-superuser --createdb
+    sudo -u cardano-node createdb cardano-db-sync-mainnet
+
+Alternatively, to create a testnet database, repeat the 'createuser' command above, then
+create the corresponding network database:
+
+    sudo -u cardano-node createdb cardano-db-sync-preview
+
+As in cardano-node, systemd services are installed as a template, and instances are named
+by network. Furthermore, the network must match the running cardano-node network!
+
+To start cardano-db-sync in mainnet:
+
+    systemctl enable --now cardano-node@mainnet.service
+
+Or start it in a testnet, be sure to use the corresponding network service instance:
+
+    systemctl enable --now cardano-node@preview.service
+
