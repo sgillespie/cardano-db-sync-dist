@@ -29,8 +29,7 @@ make
 Install dependencies:
 
 ```
-sudo apt update
-sudo apt install postgresql
+sudo apt-get install postgresql
 ```
 
 Install them:
