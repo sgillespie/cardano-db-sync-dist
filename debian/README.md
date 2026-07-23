@@ -26,6 +26,12 @@ cd debian
 make
 ```
 
+Install dependencies:
+
+```
+sudo apt-get install postgresql
+```
+
 Install them:
 
 ```
