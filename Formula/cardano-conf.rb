@@ -7,11 +7,14 @@ class CardanoConf < Formula
   version "11.0.1-config"
 
   def install
+    # Make a copy of the configs so it doesn't get clobbered by `etc.install`
+    cp_r "static/book.play.dev.cardano.org/environments", "environments"
+    # Move the original out to etc
     etc.install "static/book.play.dev.cardano.org/environments" => "cardano"
     # An etc-only formula is seen as an empty installation, so copy the
     # configs to pkgshare. This also serves as an up-to-date pristine config snapshot
     # users can use as a reference
-    pkgshare.install "static/book.play.dev.cardano.org/environments"
+    pkgshare.install "environments"
   end
 
   def caveats
@@ -23,8 +26,7 @@ class CardanoConf < Formula
   end
 
   test do
-    assert_predicate "#{etc}/cardano/mainnet/config.json", :exist?
-    assert_predicate "#{pkgshare}/cardano/mainnet/config.json", :exist?
-    system "false"
+    assert_predicate etc/"cardano/mainnet/config.json", :exist?
+    assert_predicate pkgshare/"environments/mainnet/config.json", :exist?
   end
 end
