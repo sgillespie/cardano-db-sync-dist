@@ -11,6 +11,6 @@ Architecture: amd64
 Depends: 
   ${misc:Depends},
   cardano-conf,
-Description: Core component used to participate in a Cardano blockschain
+Description: Core component used to participate in a Cardano blockchain
  This package provides a Systemd template service with instances for each 
  network. See README.Debian for setup instructions.
