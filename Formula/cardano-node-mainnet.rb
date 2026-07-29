@@ -40,6 +40,6 @@ class CardanoNodeMainnet < Formula
     # Should have network configs in etc
     assert_predicate etc/"cardano/mainnet/config.json", :exist?
     # Should select mainnet config
-    assert_includes service.run.map(&:to_s), "#{etc}/cardano/preview/config.json"
+    assert_includes service.run.map(&:to_s), "#{etc}/cardano/mainnet/config.json"
   end
 end

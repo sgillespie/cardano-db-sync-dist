@@ -6,7 +6,7 @@ class CardanoNode < Formula
   license "Apache-2.0"
   version "11.0.1"
 
-  depends_on "cardano-conf" => ["11.0.1-config"]
+  depends_on "cardano-conf"
 
   def install
     bin.install Dir["bin/*"]
