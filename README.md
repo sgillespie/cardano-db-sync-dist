@@ -22,6 +22,7 @@ This repository contains multiple ways to install cardano-db-sync:
 
  * [Arch Linux](#arch-linux): Pacman packages
  * [Debian](#debian): Debian/Ubuntu packages
+ * [macOS](#macos): macOS Homebrew formulae
  * [Docker](#docker): Docker images
  * [Installation Script](#installation-script): a script that automates the manual steps
  * [Manual Steps](#manual-steps): install the static binaries and systemd units by hand
@@ -44,6 +45,10 @@ For detailed instructions, see [archlinux/README.md](archlinux/README.md)
 ### Debian
 
 See [debian/README.md](debian/README.md)
+
+### macOS
+
+See [Formula/README.md](Formula/README.md)
 
 ### Docker
 
