@@ -20,7 +20,7 @@ The following formulae are included here:
 
 ## Prerequisites
 
-To use these packages, you need only [Homebrew](brew.sh) on macOS or Linux.
+To use these packages, you need only [Homebrew](https://brew.sh) on macOS or Linux.
 
 ## Quick Start
 
