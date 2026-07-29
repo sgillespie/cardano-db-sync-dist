@@ -27,7 +27,7 @@ To use these packages, you need only [Homebrew](https://brew.sh) on macOS or Lin
 Add this formula repository and mark it as trusted:
 
 ```
-brew tap https://github.com/sgillespie/cardano-db-sync-dist
+brew tap sgillespie/cardano-db-sync-dist https://github.com/sgillespie/cardano-db-sync-dist
 brew trust sgillespie/cardano-db-sync-dist
 ```
 
