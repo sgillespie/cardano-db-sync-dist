@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 # cardano-conf: Baked-in Cardano configs, fetched from https://book.play.dev.cardano.org/.
 # Includes mainnet, preprod and preview networks.
-ARG PLAYGROUND_COMMIT=e18bf6327fa9956c907739d049e9b3ec0c6a7dd6
+ARG PLAYGROUND_COMMIT=f02b36feb858049ba451957c57166ce3148c4072
 
 FROM alpine:3 AS fetcher
 ARG PLAYGROUND_COMMIT

@@ -1,10 +1,10 @@
 class CardanoNodePreprod < Formula
   desc "The core component that is used to participate in a Cardano decentralised blockchain (preprod package)."
   homepage "https://github.com/IntersectMBO/cardano-node"
-  url "https://github.com/IntersectMBO/cardano-node/releases/download/11.0.1/cardano-node-11.0.1-linux-amd64.tar.gz"
-  sha256 "40e88a543564251338c4888ef79fde51d2306c18b48ac308c9eab3220e3a13f0"
+  url "https://github.com/IntersectMBO/cardano-node/releases/download/11.1.3/cardano-node-11.1.3-linux-amd64.tar.gz"
+  sha256 "530fb99986fbdccc46f9ee0dd86cabb1393b015feac9173cb731d89fa748365f"
   license "Apache-2.0"
-  version "11.0.1"
+  version "11.1.3"
 
   depends_on "cardano-conf"
   depends_on "cardano-node"

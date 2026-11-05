@@ -1,5 +1,5 @@
 PKGNAME := cardano-db-sync
-PKGVER := 13.7.2.1
+PKGVER := 13.8.0.0
 PKG_ARCHIVE := $(PKGNAME)-$(PKGVER)-linux.tar.gz
 PKG_ARCHIVE_URL := https://github.com/IntersectMBO/$(PKGNAME)/releases/download/$(PKGVER)/$(PKG_ARCHIVE)
 .DEFAULT_GOAL := build

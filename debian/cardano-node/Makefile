@@ -1,5 +1,5 @@
 PKGNAME := cardano-node
-PKGVER := 11.0.1
+PKGVER := 11.1.3
 ARCHIVE := $(PKGNAME)-$(PKGVER)-linux-amd64.tar.gz
 ARCHIVE_URL := https://github.com/IntersectMBO/$(PKGNAME)/releases/download/$(PKGVER)/$(ARCHIVE)
 .DEFAULT_GOAL := build

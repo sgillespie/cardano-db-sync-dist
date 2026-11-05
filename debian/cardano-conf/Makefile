@@ -1,10 +1,10 @@
-PLAYGROUND_COMMIT := e18bf6327fa9956c907739d049e9b3ec0c6a7dd6
+PLAYGROUND_COMMIT := f02b36feb858049ba451957c57166ce3148c4072
 ARCHIVE := cardano-playground-$(PLAYGROUND_COMMIT).tar.gz
 EXTRACT_STAMP := etc/cardano/.$(PLAYGROUND_COMMIT)
 
 .PHONY: build
 build: etc/cardano/.$(PLAYGROUND_COMMIT) 
-	dpkg-buildpackage
+	dpkg-buildpackage -d
 
 .PHONY: extract
 extract: $(EXTRACT_STAMP)

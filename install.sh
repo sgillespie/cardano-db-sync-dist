@@ -4,8 +4,8 @@ set -eu -o pipefail
 set -x
 
 # Versions to fetch
-export CARDANO_NODE_VERSION=11.0.1
-export CARDANO_DB_SYNC_VERSION=13.7.2.1
+export CARDANO_NODE_VERSION=11.1.3
+export CARDANO_DB_SYNC_VERSION=13.8.0.0
 export CARDANO_ENVIRONMENT=mainnet
 
 # Create a directory to work in

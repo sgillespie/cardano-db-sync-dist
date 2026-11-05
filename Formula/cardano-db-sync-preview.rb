@@ -1,8 +1,8 @@
 class CardanoDbSyncPreview < Formula
   desc "Cardano chain indexer that stores blocks/transactions in a PostgreSQL database"
   homepage "https://github.com/IntersectMBO/cardano-db-sync"
-  url "https://github.com/IntersectMBO/cardano-db-sync/releases/download/13.7.2.1/cardano-db-sync-13.7.2.1-linux.tar.gz"
-  sha256 "e1d94e868e7abcf26d506d921787add698e65ca7d90491d8d4fd7f1af6770bf1"
+  url "https://github.com/IntersectMBO/cardano-db-sync/releases/download/13.8.0.0/cardano-db-sync-13.8.0.0-linux-amd64.tar.gz"
+  sha256 "e05754514730bfa626763f9c1e58dff2f9b3e6b2e6a131d238bba69947d65045"
   license "Apache-2.0"
 
   depends_on "cardano-conf"

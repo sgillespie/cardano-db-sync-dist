@@ -48,11 +48,11 @@ To customize them, extract the configs to a directory on the host:
 ```
 # Extract an editable copy from the conf image
 mkdir -p config
-podman run --rm ghcr.io/sgillespie/cardano-conf:11.0.1 | tar -C ./config -x
+podman run --rm ghcr.io/sgillespie/cardano-conf:11.1.3 | tar -C ./config -x
 
 # Mount it to shadow the baked-in config
 podman run -v "$PWD/config:/etc/cardano:ro" -e NETWORK=mainnet \
-  ghcr.io/sgillespie/cardano-db-sync:13.7.2.1
+  ghcr.io/sgillespie/cardano-db-sync:13.8.0.0
 ```
 
 ## PostgreSQL

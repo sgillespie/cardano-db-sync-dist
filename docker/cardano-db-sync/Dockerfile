@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 # cardano-db-sync: cardano-db-sync binary + baked-in migrations and network-configs.
 # Includes upstream static release binaries.
-ARG DBSYNC_VERSION=13.7.2.1
-ARG CONF_IMAGE=ghcr.io/sgillespie/cardano-conf:11.0.1
+ARG DBSYNC_VERSION=13.8.0.0
+ARG CONF_IMAGE=ghcr.io/sgillespie/cardano-conf:11.1.3
 
 # Baked-in network configs
 FROM ${CONF_IMAGE} AS conf

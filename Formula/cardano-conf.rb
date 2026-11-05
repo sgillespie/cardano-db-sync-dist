@@ -1,10 +1,10 @@
 class CardanoConf < Formula
   desc "Configuration files for Cardano core components"
   homepage "https://github.com/input-output-hk/cardano-playground"
-  url "https://github.com/input-output-hk/cardano-playground/archive/e18bf6327fa9956c907739d049e9b3ec0c6a7dd6.tar.gz"
-  sha256 "fc29b58e5aecf66c89baeb1da93972569282bbfab29599cd816372babf5b18c8"
+  url "https://github.com/input-output-hk/cardano-playground/archive/f02b36feb858049ba451957c57166ce3148c4072.tar.gz"
+  sha256 "cfebb475adebc278e4a21ef6ff32e6be58678c9ca7527e0d871ee3975facd8c1"
   license "Apache-2.0"
-  version "11.0.1-config"
+  version "11.1.3-config"
 
   def install
     # Make a copy of the configs so it doesn't get clobbered by `etc.install`

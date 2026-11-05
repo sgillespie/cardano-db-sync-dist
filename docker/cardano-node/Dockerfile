@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
 # cardano-node: cardano-node binary + baked-in network configs. Includes upstream static
 # release binaries cardano-node/cardano-cli.
-ARG NODE_VERSION=11.0.1
-ARG CONF_IMAGE=ghcr.io/sgillespie/cardano-conf:11.0.1
+ARG NODE_VERSION=11.1.3
+ARG CONF_IMAGE=ghcr.io/sgillespie/cardano-conf:11.1.3
 
 # Baked-in network configs
 FROM ${CONF_IMAGE} AS conf

@@ -36,9 +36,9 @@ Install them:
 
 ```
 sudo dpkg --install \
-  cardano-conf_11.0.1+config_all.deb \
-  cardano-node_11.0.1-1_amd64.deb \
-  cardano-db-sync_13.7.2.1_amd64.deb
+  cardano-conf_11.1.3+config_all.deb \
+  cardano-node_11.1.3-1_amd64.deb \
+  cardano-db-sync_13.8.0.0_amd64.deb
 ```
 
 Start `cardano-node` in the desired network:

@@ -3,16 +3,18 @@ name: cardano-db-sync
 
 services:
   node:
-    image: ghcr.io/sgillespie/cardano-node:${NODE_VERSION:-11.0.1}
+    image: ghcr.io/sgillespie/cardano-node:${NODE_VERSION:-11.1.3}
     restart: on-failure
     environment:
       NETWORK: ${NETWORK:-preview}
     volumes:
       - node-db:/var/lib/cardano
       - run-cardano:/run/cardano
+      # Uncomment after extracting configs
+      # - ./config:/etc/cardano:ro
 
   db-sync:
-    image: ghcr.io/sgillespie/cardano-db-sync:${DBSYNC_VERSION:-13.7.2.1}
+    image: ghcr.io/sgillespie/cardano-db-sync:${DBSYNC_VERSION:-13.8.0.0}
     restart: on-failure
     depends_on:
       postgres:
@@ -26,6 +28,8 @@ services:
     volumes:
       - dbsync-state:/var/lib/cardano-db-sync
       - run-cardano:/run/cardano
+      # Uncomment after extracting configs
+      # - ./config:/etc/cardano:ro
 
   postgres:
     image: docker.io/library/postgres:16
