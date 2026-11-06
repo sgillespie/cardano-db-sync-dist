@@ -18,7 +18,7 @@ class CardanoNode < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/IntersectMBO/cardano-node/releases/download/11.1.3/cardano-node-11.1.3-linux-arm64.tar.gz"
+      url "https://github.com/IntersectMBO/cardano-node/releases/download/11.1.3/cardano-node-11.1.3-macos-arm64.tar.gz"
       sha256 "8c3162031d63838709a5d59117130ddf8059b3456a367ea374b054cf2161a960"
     end
   end
